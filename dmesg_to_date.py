@@ -4,7 +4,7 @@ import re
 import subprocess
 
 def uptime_in_seconds():
-    if not os.path.isfile("/proc/uptime"):
+    if os.path.isfile("/proc/uptime"):
       uptime = 0
       with open("/proc/uptime") as f:
         for line in f:
