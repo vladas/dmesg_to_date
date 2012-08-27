@@ -15,7 +15,7 @@ function uptime_cmd_to_seconds($uptime)
 {
     $seconds = 0;
     $matches = array();
-    if (preg_match('/^.+up\s(.+),\s+\d+\susers/', $uptime, $matches)) {
+    if (preg_match('/^.+up\s(.+),\s+\d+\suser/', $uptime, $matches)) {
         $timeArr = explode(',', $matches[1]);
         foreach ($timeArr as $timeStr) {
             $timeStr = trim($timeStr);
@@ -43,3 +43,4 @@ echo 'System uptime in seconds: ', (int) uptime_in_seconds(), "\n";
 //echo uptime_cmd_to_seconds('19:16  up 2 days, 21:41, 3 users, load averages: 3.01 2.60 1.93'), "\n";
 // Ubuntu
 //echo uptime_cmd_to_seconds('﻿ 19:11:47 up 5 min,  2 users,  load average: 2.29, 2.14, 1.04'), "\n";
+//echo uptime_cmd_to_seconds('﻿ 19:11:47 up 5 min,  1 user,  load average: 2.29, 2.14, 1.04'), "\n";
